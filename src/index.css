@@ -164,7 +164,7 @@ body {
         }
 
         .active {
-          @apply ring-5 size-5 ring-light-100;
+          @apply ring-2 ring-light-100 ring-offset-2 ring-offset-neutral-800;
         }
       }
 

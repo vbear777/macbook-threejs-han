@@ -14,7 +14,7 @@ import { useGLTF, useTexture } from '@react-three/drei'
 export default function Model(props) {
   const { nodes, materials } = useGLTF('/models/macbook-14-transformed.glb');
 
-  const texture = useTexture('/screen.png')
+  const texture = useTexture('/screen.jpg')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Object_10.geometry} material={materials.PaletteMaterial001} rotation={[Math.PI / 2, 0, 0]} />

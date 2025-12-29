@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 

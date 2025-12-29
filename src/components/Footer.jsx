@@ -1,8 +1,30 @@
+import { footerLinks } from "../constants";
+
 const Footer = () => {
     return (
-        <div>
-            Footer
-        </div>
+        <footer>
+            <div className="info">
+                <p>
+                    Find an Apple Store or other Shop near you
+                </p>
+                <img src="/logo.svg" alt="Apple Logo" />
+            </div>
+
+            <hr />
+
+            <div className="links">
+                <p>2025 Apple Inc. All rights reserved.</p>
+
+                <ul>
+                    {footerLinks.map(({ label, link }) => (
+                        <li key={label}>
+                            <a href={link}>{label}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </footer>
+        
     )
 }
 

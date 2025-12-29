@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { features, featureSequence } from "../constants";
 import StudioLights from "./StudioLights";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef } from "react";
+import { Suspense, useRef, useEffect } from "react";
 import MacbookModel from "./models/Macbook";
 import { useMediaQuery } from "react-responsive";
 import useMacbookStore from "../../store";
@@ -23,7 +23,7 @@ const ModelScroll = () => {
                 src: feature.videoPath,
                 muted: true,
                 playsInline: true,
-                preload: auto,
+                preload: "auto",
                 crossOrigin: 'anonymous',
             });
 
@@ -36,9 +36,10 @@ const ModelScroll = () => {
             scrollTrigger: {
                 trigger: '#f-canvas',
                 start: 'top top',
-                end: 'bottom top',
+                end: '+=200%',
                 scrub: 1,
                 pin: true,
+                pinSpacing: true,
             }
         });
 
@@ -54,7 +55,7 @@ const ModelScroll = () => {
         if(groupRef.current) {
             modelTimeline.to(groupRef.current.rotation, {
                 y: Math.PI * 2,
-                ease: 'power1.inOut'
+                ease: 'none'
             })
         }
 
@@ -108,8 +109,7 @@ const Features = () => {
             <Canvas id="f-canvas">
                 <StudioLights />
                 <ambientLight intensity={0.5} />
-
-
+                <ModelScroll />
             </Canvas>
 
             <div className="absolute inset-0">

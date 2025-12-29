@@ -127,6 +127,7 @@ const footerLinks = [
     { label: "Sales Policy", link: "#" },
     { label: "Legal", link: "#" },
     { label: "Site Map", link: "#" },
+    { label: "Email: hanifwalian@gmail.com", link: "#" },
 ];
 
 export {

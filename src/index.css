@@ -286,7 +286,7 @@ body {
   }
 
   #features {
-    @apply pt-40 relative;
+    @apply relative min-h-[200vh] pt-40 relative mt-100;
 
     h2 {
       @apply text-white font-semibold text-3xl lg:text-7xl text-center max-w-3xl mx-auto;

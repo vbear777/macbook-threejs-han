@@ -18,7 +18,7 @@
   </div>
 
 
-# 🎨 Mascbook | 3D Web
+# 🎨 Macbook | 3D Web
 
 ## 💡 Introduction
 #### Web that design with 3D models and modern design and animation, took many adjustment to make it work well on low specs laptop. 

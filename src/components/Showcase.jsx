@@ -1,9 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ShowCase = () => {
     const isLaptop = useMediaQuery({ query: '(max-width: 1024px)'});
@@ -14,7 +11,7 @@ const ShowCase = () => {
                 scrollTrigger: {
                     trigger: '#showcase',
                     start: 'top top',
-                    end: '+=200%',
+                    end: 'bottom top',
                     scrub: true,
                     pin: true,
                 }

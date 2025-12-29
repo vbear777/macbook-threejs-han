@@ -1,8 +1,38 @@
+import { useGSAP } from "@gsap/react";
+import { useMediaQuery } from "react-responsive";
+import gsap from "gsap";
+
 const ShowCase = () => {
+    const isLaptop = useMediaQuery({ query: '(max-width: 1024px)'});
+
+    useGSAP(() => {
+        if(!isLaptop) {
+            const timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '#showcase',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true,
+                    pin: true,
+                }
+            });
+
+            timeline
+                .to('.mask img', {
+                    transform: 'scale(1.1)'
+                })
+                .to('.content', {
+                    opacity: 1,
+                    y: 0,
+                    ease: 'power1.in'
+                })
+        }
+    }, [isLaptop])
+
     return (
         <section id="showcase">
             <div className="media">
-                <video src="/videos/game.mp4" loop muted playsInline />
+                <video src="/videos/game.mp4" loop muted autoPlay playsInline />
                 <div className="mask">
                     <img src="/mask-logo.svg" alt="apple mask logo" />
                 </div>
